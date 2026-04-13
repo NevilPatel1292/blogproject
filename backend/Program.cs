@@ -1,40 +1,40 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Blogproj.Data;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<BlogprojContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BlogprojContext") ?? throw new InvalidOperationException("Connection string 'BlogprojContext' not found.")));
 
-// Add services to the container.
-
+// Add services to the container
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// ✅ In-Memory Database (for deployment)
+builder.Services.AddDbContext<BlogprojContext>(options =>
+    options.UseInMemoryDatabase("TestDB"));
+
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<BlogprojContext>(options =>
-options.UseSqlServer(
-	builder.Configuration.GetConnectionString("BlogprojContext")
-	));
-
+// CORS (allow frontend)
 builder.Services.AddCors(options =>
 {
-	options.AddPolicy("AllowAll",
-		policy => policy.AllowAnyOrigin()
-						.AllowAnyHeader()
-						.AllowAnyMethod());
+    options.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure pipeline
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+
+// ✅ Enable CORS
 app.UseCors("AllowAll");
 
 app.UseAuthorization();

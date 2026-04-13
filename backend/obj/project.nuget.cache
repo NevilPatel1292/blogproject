@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ITgZkp5YKqw=",
+  "dgSpecHash": "aPonIyDpqBA=",
   "success": true,
   "projectFilePath": "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj",
   "expectedPackageFiles": [
@@ -80,6 +80,7 @@
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.25\\microsoft.entityframeworkcore.abstractions.8.0.25.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.25\\microsoft.entityframeworkcore.analyzers.8.0.25.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.25\\microsoft.entityframeworkcore.design.8.0.25.nupkg.sha512",
+    "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.0\\microsoft.entityframeworkcore.inmemory.8.0.0.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.25\\microsoft.entityframeworkcore.relational.8.0.25.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.25\\microsoft.entityframeworkcore.sqlserver.8.0.25.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.25\\microsoft.entityframeworkcore.tools.8.0.25.nupkg.sha512",
