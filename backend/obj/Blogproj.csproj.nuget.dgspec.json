@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\Blogproj.csproj": {}
+    "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\Blogproj.csproj": {
+    "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\Blogproj.csproj",
+        "projectUniqueName": "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj",
         "projectName": "Blogproj",
-        "projectPath": "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\Blogproj.csproj",
+        "projectPath": "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj",
         "packagesPath": "C:\\Users\\nevil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\obj\\",
+        "outputPath": "D:\\Appsr\\blogproject\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z+W8pmg4pAE=",
+  "dgSpecHash": "ITgZkp5YKqw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nevil\\source\\repos\\Blogproj\\Blogproj\\Blogproj.csproj",
+  "projectFilePath": "D:\\Appsr\\blogproject\\backend\\Blogproj.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nevil\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\nevil\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
