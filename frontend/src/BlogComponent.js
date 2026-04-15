@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-const BASE_URL = "http://localhost:5013/api/blogs";
+const BASE_URL = "http://127.0.0.1:10000/api/blogs";
 
 function BlogComponent() {
   const [blogs, setBlogs] = useState([]);
@@ -12,6 +12,9 @@ function BlogComponent() {
   const [image, setImage] = useState(""); // ✅ added
   const [editId, setEditId] = useState(null);
   const location = useLocation();
+
+  console.log(blogs);
+  
 
   const fetchBlogs = () => {
     axios.get(BASE_URL)

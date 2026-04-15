@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-const BASE_URL = "http://localhost:5013/api/blogs";
+const BASE_URL = "http://127.0.0.1:10000/api/Blogs";
 
 
 function BlogDetails() {

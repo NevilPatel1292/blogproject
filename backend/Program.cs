@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllers();
 
-// ✅ In-Memory Database (for deployment)
+// SQL Server database
 builder.Services.AddDbContext<BlogprojContext>(options =>
-    options.UseInMemoryDatabase("TestDB"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BlogprojContext")));
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -31,8 +31,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
 
 // ✅ Enable CORS
 app.UseCors("AllowAll");

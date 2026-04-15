@@ -1,0 +1,11 @@
+backend/bin/
+backend/obj/
+backend/out/
+frontend/node_modules/
+frontend/build/
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.exe
