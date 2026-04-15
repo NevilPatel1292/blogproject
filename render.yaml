@@ -12,13 +12,22 @@ services:
         value: Production
       - key: ConnectionStrings__BlogprojContext
         sync: false
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:10000
+  - type: pserv
+    name: blogproject-db
+    plan: free
+    ipAllowList: []
+    disk:
+      name: blogproject-db-disk
+      sizeGB: 1
   - type: web
     name: blogproject-frontend
     runtime: static
     repo: https://github.com/NevilPatel1292/blogproject
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: ./frontend/build
+    staticPublishPath: build
     routes:
       - type: rewrite
         source: /*

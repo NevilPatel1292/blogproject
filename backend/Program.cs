@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllers();
 
-// SQL Server database
+// PostgreSQL database
 builder.Services.AddDbContext<BlogprojContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BlogprojContext")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("BlogprojContext")));
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
