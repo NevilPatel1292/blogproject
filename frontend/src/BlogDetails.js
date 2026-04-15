@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
-const BASE_URL = "http://127.0.0.1:10000/api/Blogs";
+import { BLOGS_API_URL } from "./api";
 
 
 function BlogDetails() {
@@ -16,7 +15,7 @@ function BlogDetails() {
     const page = queryParams.get("page");
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/${id}`)
+        axios.get(`${BLOGS_API_URL}/${id}`)
             .then(res => setBlog(res.data))
             .catch(err => console.log(err));
     }, [id]);

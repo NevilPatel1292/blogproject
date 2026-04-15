@@ -24,6 +24,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 
 // Configure pipeline
 if (app.Environment.IsDevelopment())
@@ -39,4 +40,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run("http://0.0.0.0:10000");
+app.Run($"http://0.0.0.0:{port}");

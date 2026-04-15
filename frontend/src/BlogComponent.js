@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
-const BASE_URL = "http://127.0.0.1:10000/api/blogs";
+import { BLOGS_API_URL } from "./api";
 
 function BlogComponent() {
   const [blogs, setBlogs] = useState([]);
@@ -13,11 +12,8 @@ function BlogComponent() {
   const [editId, setEditId] = useState(null);
   const location = useLocation();
 
-  console.log(blogs);
-  
-
   const fetchBlogs = () => {
-    axios.get(BASE_URL)
+    axios.get(BLOGS_API_URL)
       .then(res => setBlogs(res.data))
       .catch(err => console.log(err));
   };
@@ -34,7 +30,7 @@ function BlogComponent() {
   }, [location.search]);
 
   const addBlog = () => {
-    axios.post(BASE_URL, {
+    axios.post(BLOGS_API_URL, {
       title,
       description,
       image
@@ -47,7 +43,7 @@ function BlogComponent() {
   };
 
   const deleteBlog = (id) => {
-    axios.delete(`${BASE_URL}/${id}`)
+    axios.delete(`${BLOGS_API_URL}/${id}`)
       .then(() => fetchBlogs());
   };
 
@@ -59,7 +55,7 @@ function BlogComponent() {
   };
 
   const updateBlog = () => {
-    axios.put(`${BASE_URL}/${editId}`, {
+    axios.put(`${BLOGS_API_URL}/${editId}`, {
       id: editId,
       title,
       description,
