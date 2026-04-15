@@ -11,16 +11,11 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: ConnectionStrings__BlogprojContext
-        sync: false
+        fromDatabase:
+          name: blogproject-db
+          property: connectionString
       - key: ASPNETCORE_URLS
         value: http://0.0.0.0:10000
-  - type: pserv
-    name: blogproject-db
-    plan: free
-    ipAllowList: []
-    disk:
-      name: blogproject-db-disk
-      sizeGB: 1
   - type: web
     name: blogproject-frontend
     runtime: static
@@ -35,3 +30,8 @@ services:
     envVars:
       - key: REACT_APP_API_BASE_URL
         sync: false
+databases:
+  - name: blogproject-db
+    plan: free
+    databaseName: blogproj
+    user: blogproj
