@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Blogproj.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,9 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllers();
 
-// PostgreSQL database
-builder.Services.AddDbContext<BlogprojContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("BlogprojContext")));
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<BlogprojContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("BlogprojContext")));
+}
+else
+{
+    builder.Services.AddDbContext<BlogprojContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("BlogprojContext")));
+}
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -24,7 +31,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+
 
 // Configure pipeline
 if (app.Environment.IsDevelopment())
@@ -40,4 +47,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run($"http://0.0.0.0:{port}");
+app.Run();

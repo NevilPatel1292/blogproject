@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { BLOGS_API_URL } from "./api";
 
 
 function BlogDetails() {
+    const API = "http://localhost:5013/api/Blogs";
     const { id } = useParams();
     const navigate = useNavigate();
     const [blog, setBlog] = useState(null);
@@ -15,7 +15,7 @@ function BlogDetails() {
     const page = queryParams.get("page");
 
     useEffect(() => {
-        axios.get(`${BLOGS_API_URL}/${id}`)
+        axios.get(`${API}/${id}`)
             .then(res => setBlog(res.data))
             .catch(err => console.log(err));
     }, [id]);
